@@ -5,9 +5,10 @@ import ContractDetail from "../../components/ContractDetail/ContractDetail";
 import { AbiJson } from "../../Contract/abi";
 import "./Home.scss";
 
-const contractAddress = "0xfDA1cF6261DcAbAa29b3e464f78717FFb54b8A63";
+const contractAddress = "0x7f268357A8c2552623316e2562D90e642bB538E5";
 
 export const HomePage = (): ReactElement => {
+  const [name, setName] = useState('')
   const { ethereum }: any = useMemo(() => window, []);
   const web3 = useMemo(() => new Web3(ethereum), [ethereum]);
   const contractInstance = useMemo(
@@ -15,6 +16,21 @@ export const HomePage = (): ReactElement => {
     [web3]
   );
   console.log(contractInstance);
+
+  useEffect(() => {
+    // const getName = async () => {
+    //   const name = await contractInstance.methods.name().call();
+    //   console.log("[contract name", contractInstance.methods.name());
+    // };
+    // getName();
+    // console.log("contract name", contractInstance.methods.name().call().then());
+
+    contractInstance.methods.name().call().then((res: string) => {
+      console.log('test', res)
+      setName(res)
+    })
+
+  }, [contractInstance, ethereum]);
 
   const [currentAccount, setCurrentAccount] = useState(null);
 
@@ -79,7 +95,7 @@ export const HomePage = (): ReactElement => {
   });
 
   const titles = [
-    "1. Claim",
+    "1. Name",
     "2. deposite",
     "3. emergencyWithdraw",
     "4. withdraw",
@@ -154,7 +170,7 @@ export const HomePage = (): ReactElement => {
 
         {/* ====Claim=== */}
         <div className="contract-item">
-          <ContractDetail title={titles[0]} onWrite={onWrite} />
+          <ContractDetail read={true} value={name} title={titles[0]} onWrite={onWrite} />
         </div>
 
         {/* ====deposite=== */}

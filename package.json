@@ -39,6 +39,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "lint": "eslint . --ext .ts",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
@@ -71,6 +72,9 @@
     "@types/react-redux": "^7.1.24",
     "@types/react-router-dom": "^5.3.3",
     "@types/redux-logger": "^3.0.9",
-    "@types/redux-saga": "^0.10.5"
+    "@types/redux-saga": "^0.10.5",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0"
   }
 }

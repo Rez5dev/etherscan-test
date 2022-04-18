@@ -1,6 +1,7 @@
 import "./ContractDetail.scss";
 
 export interface IContractDetail {
+  read?: boolean;
   title?: string;
   description?: string;
   onWrite?: (title: string | undefined) => void;
@@ -19,6 +20,7 @@ export interface IContractDetail {
 }
 
 const ContractDetail = ({
+  read = false,
   title,
   description,
   onWrite,
@@ -98,8 +100,9 @@ const ContractDetail = ({
             }
           }}
         >
-          Write
+          {read ? value : 'write'}
         </div>
+        {}
       </div>
     </div>
   );
