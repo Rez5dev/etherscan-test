@@ -1,0 +1,23 @@
+@import '../../theme.scss';
+
+.home-page {
+  height: 100%;
+  .contract-item {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-page {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .home-page {
+  }
+}
+
+.home-title {
+  font-size: 25px;
+}

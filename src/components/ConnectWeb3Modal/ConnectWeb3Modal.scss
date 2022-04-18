@@ -1,0 +1,30 @@
+@import '../../theme.scss';
+
+.connect-modal-component {
+  .modal-header {
+    font-weight: bold;
+    .close-btn {
+      cursor: pointer;
+    }
+  }
+  .modal-body{
+    .connect-button {
+      padding: 10px;
+      border: solid 1px $gray500;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .connect-modal-component {
+    
+  }   
+}
+
+@media screen and (max-width: 991px) {
+  .connect-modal-component {
+    
+  } 
+}

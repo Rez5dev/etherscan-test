@@ -1,0 +1,120 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import './theme.scss';
+@import './custom.scss';
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  #main {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    .content-wrapper {
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+
+      .content {
+        flex: 1;
+        background: white;
+      }
+    }
+
+    &.blur {
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.45);
+        z-index: 15;
+      }
+    }
+  }
+}
+
+.overlay-loader {
+  z-index: 1010;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000050;
+}
+
+@media screen and (min-width: 992px) {
+  #main {
+    &.resize {
+      .content-wrapper {
+        height: calc(100vh - 47px);
+        max-height: calc(100vh - 47px);
+      }
+      .sidebar-component {
+        height: calc(100vh - 47px);
+        max-height: calc(100vh - 47px);
+      }
+    }
+  }
+  .content-wrapper {
+    width: calc(100% - 262px);
+    margin-left: auto;
+    .content {
+      border-top-left-radius: 10px;
+      margin-top: 60px;
+      height: calc(100% - 60px);
+    }
+    &.open {
+      animation: closeAction 0.2s ease-out;
+      width: calc(100% - 262px);
+    }
+    &.closed {
+      animation: expandAction 0.2s ease-out;
+      width: calc(100% - 80px);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .content-wrapper {
+    width: 100%;
+    .content {
+      margin-top: 60px;
+      height: calc(100% - 60px);
+    }
+  }
+}
+
+@keyframes expandAction {
+  0% {
+    width: calc(100% - 262px);
+  }
+  100% {
+    width: calc(100% - 80px);
+  }
+}
+
+@keyframes closeAction {
+  0% {
+    width: calc(100% - 80px);
+  }
+  100% {
+    width: calc(100% - 262px);
+  }
+}

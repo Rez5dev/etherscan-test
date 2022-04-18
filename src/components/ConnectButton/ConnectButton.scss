@@ -1,0 +1,41 @@
+@import '../../theme.scss';
+
+.connect-button-component {
+  .connect-button {
+    width: 180px;
+    border-radius: 3px;
+    color: $white900;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    .status-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $red700;
+      margin-right: 10px;
+    }
+    .active-icon {
+      background-color: $white900;
+    }
+  }  
+    .active-button {
+      background-color: $blue700;
+      width: 100px;
+    }
+    .inActive-button {
+    background-color: $gray500;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .connect-button-component {
+    
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .connect-button-component {
+    
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../theme.scss';
+
+.contract-detail {
+  border: solid 1px $gray500;
+  border-radius: 3px;
+
+  .title {
+    padding: 10px 5px;
+    background-color: $gray200;
+    border-radius: 3px;
+    border-bottom: solid 1px $gray500;
+  }
+  .description-content {
+    padding: 15px 15px 30px;
+    .input-text {
+      width: 100%;
+      margin: 15px 0 20px;
+      border: solid 1px $gray500;
+      padding: 5px 15px;
+      border-radius: 3px;
+    }
+    .write-btn {
+      color: $white900;
+      padding: 3px;
+      width: 50px;
+      background-color: $blue700;
+      border-radius: 5px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contract-detail {
+    
+  }   
+}
+
+@media screen and (max-width: 991px) {
+  .contract-detail {
+    
+  } 
+}

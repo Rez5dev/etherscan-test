@@ -1,0 +1,19 @@
+@import '../../theme.scss';
+
+.header-component {
+  align-self: center;
+  padding: 20px;
+  color: $blue700; 
+}
+
+@media screen and (min-width: 992px) {
+  .header-component {
+    font-size: 30px;
+  }   
+}
+
+@media screen and (max-width: 991px) {
+  .header-component {
+    font-size: 20px;
+  } 
+}
